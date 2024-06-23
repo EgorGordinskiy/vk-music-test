@@ -1,0 +1,21 @@
+name: Check
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: npm install
+      - name: Lint ESLint
+        run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: npm install
+      - name: Build project
+        run: npm run build
