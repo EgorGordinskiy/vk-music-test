@@ -29,11 +29,13 @@ export const AudioBlock: FC<IAudioBlock> = observer((props) => {
 
   return (
     <AudioCell
-      activated={isStartAudio}
+      // activated={isStartAudio}
       left={
         <AudioCellImage
           src={audio.image}
-          overlay={<UiAudioLoading isLoading={isPlayingAudio} />}
+          overlay={
+            isStartAudio ? <UiAudioLoading isLoading={isPlayingAudio} /> : <></>
+          }
           overlayVisibility={isStartAudio ? "always" : undefined}
         />
       }
